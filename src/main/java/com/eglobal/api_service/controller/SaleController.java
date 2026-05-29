@@ -35,7 +35,7 @@ public class SaleController {
         return saleService.get(PageRequest.of(page, size,  Sort.by(sortDirection, sort)));
     }
 
-    @PatchMapping("/sale/{id}")
+    @PutMapping("/{id}")
     ResponseEntity<Void> cancel(@PathVariable Long id, @RequestBody CancelRequest request){
         saleService.cancel(id, request);
         return ResponseEntity.ok().build();
